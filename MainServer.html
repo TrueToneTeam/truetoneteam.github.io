@@ -5,53 +5,24 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/includeHTML.js"></script>
+		<script type="text/javascript">
+			function headerCompleted() {
+				$("#sample").html("haha");
+			}
+			function footerCompleted() {
+				$("#sample2").html("hoho");
+			}
+		</script>
+
+
 	</head>
+
 	<body class="is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">TrueTone</a> ProtoType</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="button">메인으로 이동</a></li>
-						<!-- <li><a href="index.html">Home</a></li> -->
-						<li>
-							<a href="#" class="icon solid fa-angle-down">추가 정보</a>
-							<ul>
-								<li><a href="StaffList.html">관리자 목록</a></li>
-								<li><a href="WhiteList.html">화이트리스트 목록</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" class="icon solid fa-angle-down">공식 채널</a>
-							<ul>
-								<li><a href="https://open.kakao.com/o/gj2D6Veb">카카오톡 채팅방</a></li>
-								<li><a href="https://band.us/@zerosm">밴드</a></li>
-								<li><a href="https://cafe.naver.com/mcpezerosm">네이버 카페</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" class="icon solid fa-angle-down">이벤트 정보</a>
-							<ul>
-								<li>
-									<a href="#">경험치 랭킹: Season 2</a>
-									<ul>
-										<li><a href="ExpRankTearPoint.html">랭킹 티어 점수</a></li>
-										<li><a href="ExpRankTearGift.html">랭킹 달성 보상</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Pvp 랭킹: Season 1</a>
-									<ul>
-										<li><a href="PvpRankTearPoint.html">랭킹 티어 점수</a></li>
-										<li><a href="PvpRankTearGift.html">랭킹 달성 보상</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
+			<header role="header" data-include="include/header_inc.html"></header>
 
 			<!-- Main -->
 				<section id="main" class="container">
@@ -105,7 +76,6 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
-
 		</div>
 
 		<!-- Scripts -->
@@ -116,6 +86,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
+	<script src="http://code.jquery.com/jquery.min.js"></script> <script> $(function(){ includeLayout(); }); function includeLayout(){ var includeArea = $('[data-include]'); var self, url; $.each(includeArea, function() { self = $(this); url = self.data("include"); self.load(url, function() { self.removeAttr("data-include"); }); }); } 
+	</script>
 </html>
