@@ -5,80 +5,51 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style type="text/css">#whitelistStaff {display: none;}</style>
+		<style type="text/css">#whitelistUser {display: none;}</style>
+		<script type="text/javascript" src="js/myMenu.js"></script>
 	</head>
+	
 	<body class="is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">TrueTone</a> ProtoType</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="button">메인으로 이동</a></li>
-						<!-- <li><a href="index.html">Home</a></li> -->
-						<li>
-							<a href="#" class="icon solid fa-angle-down">추가 정보</a>
-							<ul>
-								<li><a href="StaffList.html">관리자 목록</a></li>
-								<li><a href="WhiteList.html">화이트리스트 목록</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" class="icon solid fa-angle-down">공식 채널</a>
-							<ul>
-								<li><a href="https://open.kakao.com/o/gj2D6Veb">카카오톡 채팅방</a></li>
-								<li><a href="https://band.us/@zerosm">밴드</a></li>
-								<li><a href="https://cafe.naver.com/mcpezerosm">네이버 카페</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" class="icon solid fa-angle-down">이벤트 정보</a>
-							<ul>
-								<li>
-									<a href="#">경험치 랭킹: Season 2</a>
-									<ul>
-										<li><a href="ExpRankTearPoint.html">랭킹 티어 점수</a></li>
-										<li><a href="ExpRankTearGift.html">랭킹 달성 보상</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Pvp 랭킹: Season 1</a>
-									<ul>
-										<li><a href="PvpRankTearPoint.html">랭킹 티어 점수</a></li>
-										<li><a href="PvpRankTearGift.html">랭킹 달성 보상</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
+			<header role="header" data-include="header_index.html"></header>
 
 			<!-- Main -->
-				<section id="main" class="container">
-					<header>
-						<h2>화이트리스트 목록</h2>
-						<p>야생 채널의 보안 수준 1단계</p>
-					</header>
+			<section id="main" class="container">
+				<header>
+					<h2>화이트리스트 목록</h2>
+					<p>야생 채널의 보안 수준 1단계</p>
+				</header>
+
+				<div class="box">
+					<center>
+						<h3>화이트리스트란?</h3>
+						<p>
+							서버에 접속 할 수 있는 유저 목록을 말합니다.
+							<br>
+							화이트리스트에 등록이 안되어 있을 경우, 야생 채널에 접속하실 수 없습니다.
+							<br>
+							화이트 리스트에 등록이 되어있지 않다면, 카톡 채팅방에서 신청해달라고 해주시면 됩니다.
+						</p>
+						<ul class="actions fit small">
+							<li><a href="https://open.kakao.com/me/zetluna" class="button special fit">카카오톡 문의(루나와 1:1)</a></li>
+							<li><a href="https://open.kakao.com/o/gj2D6Veb" class="button alt fit">공식 카카오톡 채팅방에 문의하기</a></li>
+							<!-- <li><a href="#" class="button fit small">Coming Soon</a></li> -->
+						</ul>
+					</center>
+				</div>
+				
+				<ul class="actions fit small">
+					<li><input type="button" value="등록된 관리자 목록" onclick="wlStaff(1)"></li>
+					<li><input type="button" value="등록된 유저 목록" onclick="wlUser(1)"></li>
+					<li><input type="button" value="모두 닫기" onclick="wlUser(2)"></li>
+				</ul>
+				<hr>
+
+				<div id = "whitelistStaff">
 					<div class="box">
-						<center>
-							<h3>화이트리스트란?</h3>
-							<p>
-								서버에 접속 할 수 있는 유저 목록을 말합니다.
-								<br>
-								화이트리스트에 등록이 안되어 있을 경우, 야생 채널에 접속하실 수 없습니다.
-								<br>
-								화이트 리스트에 등록이 되어있지 않다면, 카톡 채팅방에서 신청해달라고 해주시면 됩니다.
-							</p>
-							<ul class="actions fit small">
-								<li><a href="https://open.kakao.com/me/zetluna" class="button special fit small">카카오톡 문의(루나와 1:1)</a></li>
-								<li><a href="https://open.kakao.com/o/gj2D6Veb" class="button alt fit small">공식 카카오톡 채팅방에 문의하기</a></li>
-								<!-- <li><a href="#" class="button fit small">Coming Soon</a></li> -->
-							</ul>
-						</center>
-					</div>
-					
-					<div class="box">
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
 						<h3><center>등록된 관리자 목록</center></h3>
 						<div class="row">
 							<div class="row-8 row-18-mobilep">
@@ -116,7 +87,11 @@
 								</p>
 							</div>
 						</div>
-						<hr>
+					</div>
+				</div>
+
+				<div id = "whitelistUser">
+					<div class="box">
 						<center>
 							<h3>등록된 유저 목록</h3>
 							<p>최종 수정일: 2020.09.09</p>
@@ -253,33 +228,37 @@
 							</div>
 						</div>
 					</div>
-				</section>
-
+				</div>
+			</section>
+			
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
-
+			<footer role="footer" data-include="footer_index.html"></footer>
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
+
+	<script> 
+	$(function(){ 
+		includeLayout(); 
+	}); 
+	function includeLayout(){ 
+		var includeArea = $('[data-include]'); 
+		var self, url; 
+		$.each(includeArea, function() { 
+			self = $(this); 
+			url = self.data("include"); 
+			self.load(url, function() { 
+				self.removeAttr("data-include"); 
+			}); 
+		}); 
+	} 
+	</script>
 </html>
