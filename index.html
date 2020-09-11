@@ -179,7 +179,13 @@
 			</section>
 			
 			<!-- Footer -->
-			<footer role="footer" data-include="footer_index.html"></footer>
+			<div id="footer" data-include="footer_index.html">
+				<footer id="footer">
+					<ul class="copyright">
+						<li>&copy;TrueTone Inc(2018-2020).</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+			</div>
 		</div>
 		
 		<!-- Scripts -->
@@ -190,22 +196,5 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		
-		<script> 
-		$(function(){ 
-			includeLayout(); 
-		}); 
-		function includeLayout(){ 
-			var includeArea = $('[data-include]'); 
-			var self, url; 
-			$.each(includeArea, function() { 
-				self = $(this); 
-				url = self.data("include"); 
-				self.load(url, function() { 
-					self.removeAttr("data-include"); 
-				}); 
-			}); 
-		} 
-		</script>
 	</body>
 </html>
