@@ -7,6 +7,23 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	
+	<script> 
+	$(function(){ 
+		includeLayout(); 
+	}); 
+	function includeLayout(){ 
+		var includeArea = $('[data-include]'); 
+		var self, url; 
+		$.each(includeArea, function() { 
+			self = $(this); 
+			url = self.data("include"); 
+			self.load(url, function() { 
+				self.removeAttr("data-include"); 
+			}); 
+		}); 
+	} 
+	</script>
+	
 	<body class="landing is-preload">
 		<div id="page-wrapper">
 			<div id="header">
