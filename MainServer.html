@@ -18,6 +18,14 @@
 					<h2>일반 채널: <small>Season 8.0</small></h2>
 					<p>색다른 PVP장, 다양한 치장 아이템, 나만의 공간! 마인팜이 한곳에.</p>
 				</header>
+				
+				<div class="box">
+					<center>
+						<h3><b>오픈 까지 남은 시간</b></h3>
+						<h4 id="OpenTime"></h4>
+					</center>
+				</div>
+				
 				<div class="box">
 					<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
 					<center>
@@ -87,5 +95,39 @@
 			}); 
 		}); 
 	} 
+	</script>
+	
+	<script> 
+	const countDownTimer = function (id, date) { 
+		var _vDate = new Date(date); // 전달 받은 일자 
+		var _second = 1000; 
+		var _minute = _second * 60; 
+		var _hour = _minute * 60; 
+		var _day = _hour * 24; 
+		var timer; function showRemaining() { 
+			var now = new Date(); 
+			var distDt = _vDate - now; 
+			
+			if (distDt < 0) { 
+				clearInterval(timer); 
+				document.getElementById(id).textContent = 'Coming Soon..'; 
+				return; 
+			} 
+			
+			var days = Math.floor(distDt / _day); 
+			var hours = Math.floor((distDt % _day) / _hour); 
+			var minutes = Math.floor((distDt % _hour) / _minute); 
+			var seconds = Math.floor((distDt % _minute) / _second); //document.getElementById(id).textContent = date.toLocaleString() + "까지 : "; 
+			document.getElementById(id).textContent = days + '일 '; 
+			document.getElementById(id).textContent += hours + '시간 '; 
+			document.getElementById(id).textContent += minutes + '분 '; 
+			document.getElementById(id).textContent += seconds + '초'; 
+		} 
+		timer = setInterval(showRemaining, 1000); 
+	} 
+	var dateObj = new Date(); 
+	dateObj.setDate(dateObj.getDate() + 1); 
+	countDownTimer('sample01', dateObj);
+	countDownTimer('OpenTime', '17/09/2020 19:01 FM');
 	</script>
 </html>
