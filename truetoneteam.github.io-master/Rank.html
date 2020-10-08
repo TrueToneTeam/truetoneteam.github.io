@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TrueTone: ProtoType</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style type="text/css">#expRank {display: none;}</style>
+		<style type="text/css">#pvpRank {display: none;}</style>
+		<style type="text/css">#pvp1vs1Rank {display: none;}</style>
+		<style type="text/css">#closeMenu {display: none;}</style>
+		<script type="text/javascript" src="assets/js/rankMenu.js"></script>
+	</head>
+
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header role="header" data-include="header_index.html"></header>
+
+			<!-- Main -->
+			<section id="main" class="container">
+				<header>
+					<h2>랭킹 이벤트</h2>
+					<p>티어별 점수와 시즌 종료 보상 목록을 확인해보세요!</p>
+				</header>
+
+				<div class="box">
+					<ul class="actions fit small">
+						<li><input type="button" value="경험치 랭킹" onclick="expRank(1)"></li>
+						<li><input type="button" value="PVP 랭킹" onclick="pvpRank(1)"></li>
+						<li><input type="button" value="1vs1 PVP 랭킹" onclick="pvp1vs1Rank(1)"></li>
+						<li><input type="button" value="모두 닫기" onclick="closeMenu(2)"></li>
+					</ul>
+				</div>
+				
+				<hr>
+				
+				<div id = "expRank">
+					<div class="box">
+						<span class="image featured"><img src="images/pic03.jpg" height="110" alt=""></span>
+						<p align="center">
+							<font size="6">
+								<i><b>경험치 랭킹: Season 2</b></i>
+							</font>
+							<br>
+							<font size="3" face='나눔'>
+								진행 기간: 2020-00-00 00:00 ~ 2020-00-00 00:00
+								<br>
+								보상 수령 가능 기간: 시즌 종료 부터 2주까지 수령 가능
+							</font>
+						</p>
+					</div>
+					
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>등급 없음</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0 XP ~ 0 XP</i>
+										<br>
+										 * 시즌 종료 보상 없음.
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>브론즈</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0 XP ~ 0 XP</i>
+										<br>
+										 * 20,000원 + 《EXP(2)》 브론즈 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>실버</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0 XP ~ 0 XP</i>
+										<br>
+										 * 27,000원 + 《EXP(2)》 실버 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>골드</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0 XP ~ 0 XP</i>
+										<br>
+										 * 34,000원 + 《EXP(2)》 골드 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id = "pvpRank">
+					<div class="box">
+						<span class="image featured"><img src="images/pic03.jpg" height="110" alt=""></span>
+						<p align="center">
+							<font size="6">
+								<i><b>PVP 랭킹: Season 1</b></i>
+							</font>
+							<br>
+							<font size="3" face='나눔'>
+								진행 기간: 2020-00-00 00:00 ~ 2020-00-00 00:00
+								<br>
+								보상 수령 가능 기간: 시즌 종료 부터 2주까지 수령 가능
+							</font>
+						</p>
+					</div>
+					
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>등급 없음</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 시즌 종료 보상 없음.
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>브론즈</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 26,000원 + 《PVP(1)》 브론즈 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>실버</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 32,000원 + 《PVP(1)》 실버 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>골드</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 38,000원 + 《PVP(1)》 골드 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id = "pvp1vs1Rank">
+					<div class="box">
+						<span class="image featured"><img src="images/pic03.jpg" height="110" alt=""></span>
+						<p align="center">
+							<font size="6">
+								<i><b>1vs1 PVP 랭킹: Season Zero</b></i>
+							</font>
+							<br>
+							<font size="3" face='나눔'>
+								진행 기간: 2020-00-00 00:00 ~ 2020-00-00 00:00
+								<br>
+								보상 수령 가능 기간: 시즌 종료 부터 2주까지 수령 가능
+							</font>
+						</p>
+					</div>
+					
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>등급 없음</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 시즌 종료 보상 없음.
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>브론즈</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 25,000원 + 《1vs1(Zero)》 브론즈 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>실버</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 28,000원 + 《1vs1(Zero)》 실버 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+							
+						<div class="col-6 col-12-narrower">
+							<div class="box">
+								<p>
+									<font size="6">
+										<i><b>골드</b></i>
+									</font>
+									<br>
+									<font size="4">
+										<i>0점 ~ 0점</i>
+										<br>
+										 * 31,000원 + 《1vs1(Zero)》 골드 칭호(무제한)
+									</font>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Footer -->
+			<footer role="footer" data-include="footer_index.html"></footer>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+	
+	<script> 
+	$(function(){ 
+		includeLayout(); 
+	}); 
+	function includeLayout(){ 
+		var includeArea = $('[data-include]'); 
+		var self, url; 
+		$.each(includeArea, function() { 
+			self = $(this); 
+			url = self.data("include"); 
+			self.load(url, function() { 
+				self.removeAttr("data-include"); 
+			}); 
+		}); 
+	} 
+	</script>
+	
+	<script> 
+	const countDownTimer = function (id, date) { 
+		var _vDate = new Date(date); // 전달 받은 일자 
+		var _second = 1000; 
+		var _minute = _second * 60; 
+		var _hour = _minute * 60; 
+		var _day = _hour * 24; 
+		var timer; function showRemaining() { 
+			var now = new Date(); 
+			var distDt = _vDate - now; 
+			
+			if (distDt < 0) { 
+				clearInterval(timer); 
+				document.getElementById(id).textContent = 'Coming Soon..'; 
+				return; 
+			} 
+			
+			var days = Math.floor(distDt / _day); 
+			var hours = Math.floor((distDt % _day) / _hour); 
+			var minutes = Math.floor((distDt % _hour) / _minute); 
+			var seconds = Math.floor((distDt % _minute) / _second); //document.getElementById(id).textContent = date.toLocaleString() + "까지 : "; 
+			document.getElementById(id).textContent = days + '일 '; 
+			document.getElementById(id).textContent += hours + '시간 '; 
+			document.getElementById(id).textContent += minutes + '분 '; 
+			document.getElementById(id).textContent += seconds + '초'; 
+		} 
+		timer = setInterval(showRemaining, 1000); 
+	} 
+	var dateObj = new Date(); 
+	dateObj.setDate(dateObj.getDate() + 1); 
+	
+	countDownTimer('Wow', dateObj);
+	countDownTimer('Event1', '12/25/2020');
+	countDownTimer('Event2', '12/25/2020');
+	countDownTimer('Event3', '12/25/2020');
+	</script>
+</html>
