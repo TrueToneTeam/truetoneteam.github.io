@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TrueTone: ProtoType</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style type="text/css">#eventList {display: none;}</style>
+		<style type="text/css">#eventListEnd {display: none;}</style>
+		<style type="text/css">#eventListSoon {display: none;}</style>
+		<script type="text/javascript" src="assets/js/myMenu.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="assets/css/reset.css">
+	    <link rel="stylesheet" href="assets/css/content.css">
+	    <link id="dark-mode-sheet"
+	          rel="stylesheet"
+	          href="assets/css/dark.css"
+	          media="(prefers-color-scheme: light)">
+
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
+	    <script src="assets/js/dark.js"></script>
+	</head>
+
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header role="header" data-include="header_index.html"></header>
+
+			<!-- Main -->
+			<section id="main" class="container">
+				<article>
+					<center>
+						<p>
+							<font size="6">Dark Mode</font>
+							<br>
+							다크 모드 테스트를 위한 홈페이지 입니다.
+						</p>
+					</center>
+					
+					<hr>
+					
+					<p>태스트</p>
+
+					<div class="box">
+						<ul class="actions fit small">
+							<li><input type="button" value="준비중인 이벤트" onclick="myMenu3(1)"></li>
+							<li><input type="button" value="진행중인 이벤트" onclick="myMenu1(1)"></li>
+							<li><input type="button" value="종료된 이벤트" onclick="myMenu2(1)"></li>
+							<li><input type="button" value="모두 닫기" onclick="myMenu2(2)"></li>
+						</ul>
+					</div>
+
+					<p>
+			        	Dark Mode:
+			        	<a onclick="darkModeSwitch(true)">켜기</a>
+			        	/
+			        	<a onclick="darkModeSwitch(false)">끄기</a>
+			      	</p>
+		      	</article>
+			</section>
+			
+			<!-- Footer -->
+			<footer role="footer" data-include="footer_index.html"></footer>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+	
+	<script> 
+	$(function(){ 
+		includeLayout(); 
+	}); 
+	function includeLayout(){ 
+		var includeArea = $('[data-include]'); 
+		var self, url; 
+		$.each(includeArea, function() { 
+			self = $(this); 
+			url = self.data("include"); 
+			self.load(url, function() { 
+				self.removeAttr("data-include"); 
+			}); 
+		}); 
+	} 
+	</script>
+	
+	<script> 
+	const countDownTimer = function (id, date) { 
+		var _vDate = new Date(date); // 전달 받은 일자 
+		var _second = 1000; 
+		var _minute = _second * 60; 
+		var _hour = _minute * 60; 
+		var _day = _hour * 24; 
+		var timer; function showRemaining() { 
+			var now = new Date(); 
+			var distDt = _vDate - now; 
+			
+			if (distDt < 0) { 
+				clearInterval(timer); 
+				document.getElementById(id).textContent = 'Coming Soon..'; 
+				return; 
+			} 
+			
+			var days = Math.floor(distDt / _day); 
+			var hours = Math.floor((distDt % _day) / _hour); 
+			var minutes = Math.floor((distDt % _hour) / _minute); 
+			var seconds = Math.floor((distDt % _minute) / _second); //document.getElementById(id).textContent = date.toLocaleString() + "까지 : "; 
+			document.getElementById(id).textContent = days + '일 '; 
+			document.getElementById(id).textContent += hours + '시간 '; 
+			document.getElementById(id).textContent += minutes + '분 '; 
+			document.getElementById(id).textContent += seconds + '초'; 
+		} 
+		timer = setInterval(showRemaining, 1000); 
+	} 
+	var dateObj = new Date(); 
+	dateObj.setDate(dateObj.getDate() + 1); 
+	
+	countDownTimer('Wow', dateObj);
+	countDownTimer('Event1', '12/25/2020');
+	countDownTimer('Event2', '12/25/2020');
+	countDownTimer('Event3', '12/25/2020');
+	</script>
+</html>
