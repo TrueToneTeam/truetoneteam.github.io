@@ -1,3 +1,3 @@
 # [truetoneteam.github.io](https://truetoneteam.github.io)
 
-Truetone Team이 만든 BE 서버의 홈페이지
+TrueToneTeam에서 제작된 BE 서버용 홈페이지.
