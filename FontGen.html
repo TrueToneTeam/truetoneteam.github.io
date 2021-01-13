@@ -21,10 +21,10 @@
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/jszip@3.5.0/dist/jszip.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-		<script src="asset/js/requestIdleCallback.min.js"></script>
-		<script src="asset/js/mcmf.js"></script>
+		<script src="assets/js/requestIdleCallback.min.js"></script>
+		<script src="assets/js/mcmf.js"></script>
 		
-		<center><p><b><font size='6'>Minecraft: BE - Font Gen</font></b> <font color='gray'><small>Original Creator: McbeEringi</small></font></p></center>
+		<center><p><b><font size='6'>Minecraft: BE - Font Gen</font></b> <font color='gray'><small>Original Creator: <a href="https://mcbeeringi.github.io/apps/mc/glyph.html">McbeEringi</a></small></font></p></center>
 		<marquee direction="left" scrollamount="10" scrolldely="100" height="64">
 			<img src="images/icon/bow_pulling_1.png" width="64" height="64" />
 			<img src="images/icon/crossbow_firework.png" width="64" height="64" />
@@ -43,18 +43,16 @@
 		</marquee>
 		<hr>
 		<div class="box">
-			<h2>구성 요소</h2>
 			<div id="configp">
+				<h2>구성 요소</h2>
 				<label><span>폰트 파일: </span><input id="ffamily" value="sans-serif" onchange="font_(fsize.value,this.value);dl_();"></label> 또는 <input type="file" onchange="load(this);" accept=".ttf,.otf,.woff,.woff2"><br>
-				<label><span>사진 크기: </span><input id="csize" type="number" value="64" onchange="csize_(this.value);dl_();">px²</label><br>
-				<label><span>글자 크기: </span><input id="fsize" type="number" value="56" oninput="font_(this.value,ffamily.value);dl_();">px</label><br>
-				<label><span>미리보기: </span><a id="dl" href="#">…</a></label>
-			</div>
-			<br>
-			<h2>설정</h2>
-			<div id="configp">
-				<label><span>변환할 목록: </span><input id="expl" value="D8~F5" oninput="this.value=this.value.toUpperCase().replace(/[^\dABCDEF,~]/,'')"></label><br>
-				<label><span>목록 모드: </span><input type="checkbox" id="expmode"> (☐:black list[BMP] ☑️:white list)</label><br>
+				<label><span>사진 크기: </span><input id="csize" type="number" value="128" onchange="csize_(this.value);dl_();">px²</label><br>
+				<label><span>글자 크기: </span><input id="fsize" type="number" value="128" oninput="font_(this.value,ffamily.value);dl_();">px</label><br>
+				<label><span>미리보기: </span><a id="dl" href="#">…</a></label><br>
+				<br>
+				<h2>설정</h2>
+				<label><span>변환할 목록: </span><input id="expl" value="D8~F5" oninput="this.value=this.value.toUpperCase().replace(/[^\dABCDEF,~]/,'')"></label> <small><font color="gray">[기본값으로 두세요!]</font></small><br>
+				<label><span>목록 모드: </span><input type="checkbox" id="expmode"> (☐:black list[BMP] ☑️:white list)</label> <small><font color="gray">[기본값으로 두세요!]</font></small><br>
 				<label><span>mcpack 변환: </span><input type="checkbox" id="expmcpack" checked></label> (체크 하면 변환 완료 후, .mcpack 파일로 다운로드)<br>
 			</div>
 			<br>
@@ -103,26 +101,26 @@
 				console.log(list);
 				if(mode)arr=list;else arr=arr.filter(x=>!(list.includes(x)));
 			}else if(mode)return;
-			expb.disabled=true;expb.textContent='Running…';
+			expb.disabled=true;expb.textContent='변환 중...';
 			configp.style.opacity=0.2;configp.style.pointerEvents='none';
 			pbar.max=(arr.length-1)*2;
 			const post=()=>{
 				const post_=()=>{
-					zip.generateAsync({type:"blob"},d=>{pbar.value=(1+d.percent*.01)*(pbar.max*.5);log.textContent=`step 2/2 packaging… ${d.percent.toFixed(2)}%`;}).then(c=>{
-						log_.textContent+='packaging done.\n';saveAs(c,expn);
-						expb.disabled=false;expb.textContent='export';
+					zip.generateAsync({type:"blob"},d=>{pbar.value=(1+d.percent*.01)*(pbar.max*.5);log.textContent=`2/2단계 파일 압축중... ${d.percent.toFixed(2)}%`;}).then(c=>{
+						log_.textContent+='폰트 파일 압축 완료.\n다운로드 진행...\n';saveAs(c,expn);
+						expb.disabled=false;expb.textContent='폰트 변환 시작';
 						configp.style.opacity=1;configp.style.pointerEvents='auto';
 					});
 				};
 				var expn=`${ffamily.value}_bmp.zip`;
 				if(mcpack){
-					zip.file('manifest.json',simple_mcmf(`n${ffamily.value}; dfont resource pack.\nmcbeeringi.github.io/apps/glyph; v[0,0,1]; tresources`));
-					log_.textContent+='manifest.json done.\n';
+					zip.file('manifest.json',simple_mcmf(`n${ffamily.value}; dMinecraft: Bedrock Edition 전용 폰트 리소스 팩 입니다.; v[0,0,1]; tresources`));
+					log_.textContent+='manifest.json 파일 작업 완료.\n';
 					c.width=128;c.height=128;ctx.font=`80px ${ffamily.value},sans-serif`;ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#fff';var str='Aa',strm=ctx.measureText(str);
 					ctx.fillText(str,(c.width-strm.width)*.5,(c.height+strm.actualBoundingBoxDescent+strm.actualBoundingBoxAscent)*.5-strm.actualBoundingBoxDescent);
 					c.toBlob(b=>{
 						zip.file('pack_icon.png',b);
-						log_.textContent+='pack_icon.png done.\n';
+						log_.textContent+='pack_icon.png 파일 작업 완료.\n';
 						expn=`${ffamily.value}_resource.mcpack`;
 						csize_(csize.value);
 						post_();
@@ -136,12 +134,12 @@
 					if(x=='00')fontFolder.file('default8.png',b);
 				});
 				pbar.value=i;//log.textContent=x;
-				log.textContent=`step 1/2 rendering… ${(i/(arr.length-1)*100).toFixed(2)}%   ( ${i} / ${arr.length-1}  ${x} )`;
-				if(i==arr.length-1){log_.textContent+='rendering done.\n';post();}
+				log.textContent=`1/2단계 폰트 이미지 작업 중... ${(i/(arr.length-1)*100).toFixed(2)}%   ( ${i}/${arr.length-1} [${x}] )`;
+				if(i==arr.length-1){log_.textContent+='폰트 이미지 작업 완료.\n';post();}
 			}));
 		};
 		</script>
-		<marquee scrollamount="10"><font color='gray'>원래 제작자: McbeEringi</font> | <font color='cyan'>수정: 달빛의 정령 루나</font></marquee>
-		<!-- <marquee scrollamount="10"><font color='gray'>심심해서 넣은 텍스트 입니다. 저는 그냥 지나가는 중이니 건들이지 말고 보기만 하세요!</font></marquee> -->
+		<marquee scrollamount="10"><font color='gray'>원래 제작자: <b>McbeEringi</b></font> | <font color='sky blue'>수정: <b>달빛의 정령 루나</b></font></marquee>
+		<!--<marquee scrollamount="10"><font color='gray'>심심해서 넣은 텍스트 입니다. 저는 그냥 지나가는 중이니 건들이지 말고 보기만 하세요!</font></marquee> -->
 	</body>
-<html>
+</html>
