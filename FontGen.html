@@ -46,8 +46,8 @@
 			<div id="configp">
 				<h2>구성 요소</h2>
 				<label><span>폰트 파일: </span><input id="ffamily" value="sans-serif" onchange="font_(fsize.value,this.value);dl_();"></label> 또는 <input type="file" onchange="load(this);" accept=".ttf,.otf,.woff,.woff2"><br>
-				<label><span>사진 크기: </span><input id="csize" type="number" value="128" onchange="csize_(this.value);dl_();">px²</label><br>
-				<label><span>글자 크기: </span><input id="fsize" type="number" value="128" oninput="font_(this.value,ffamily.value);dl_();">px</label><br>
+				<label><span>사진 크기: </span><input id="csize" type="number" value="64" onchange="csize_(this.value);dl_();">px²</label><br>
+				<label><span>글자 크기: </span><input id="fsize" type="number" value="64" oninput="font_(this.value,ffamily.value);dl_();">px</label><br>
 				<label><span>미리보기: </span><a id="dl" href="#">…</a></label><br>
 				<br>
 				<h2>설정</h2>
@@ -73,7 +73,7 @@
 		const set=x=>{ctx.clearRect(0,0,c.width,c.height);var li=[];
 			for(var i=0;i<256;i++){
 				var str=String.fromCodePoint(parseInt(x,16)*0x100+i),strm=ctx.measureText(str),hs=1,cw=c.width*.0625,ch=c.height*.0625,
-				btm=Math.max(strm.fontBoundingBoxDescent,strm.actualBoundingBoxDescent+1),abb=btm+strm.actualBoundingBoxAscent;
+				btm=Math.max(strm.fontBoundingBoxDescent||0,(strm.actualBoundingBoxDescent||0)+1),abb=btm+strm.actualBoundingBoxAscent;
 				if(abb>ch){hs=ch/abb;ctx.scale(1,hs);li.push([str,hs])}
 				ctx.fillText(str,cw*(i%16)+strm.actualBoundingBoxLeft,ch*(Math.floor(i*.0625)+1)/hs-btm,cw-strm.actualBoundingBoxLeft);
 				if(hs!=1)ctx.scale(1,1/hs);
@@ -114,7 +114,7 @@
 				};
 				var expn=`${ffamily.value}_bmp.zip`;
 				if(mcpack){
-					zip.file('manifest.json',simple_mcmf(`n${ffamily.value}; dMinecraft: Bedrock Edition 전용 폰트 리소스 팩 입니다.; v[0,0,1]; tresources`));
+					zip.file('manifest.json',simple_mcmf(`n${ffamily.value}; dfont resource pack.\ntruetoneteam.github.io/FontGen.html; v[1,0,0]; tresources`));
 					log_.textContent+='manifest.json 파일 작업 완료.\n';
 					c.width=128;c.height=128;ctx.font=`80px ${ffamily.value},sans-serif`;ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#fff';var str='Aa',strm=ctx.measureText(str);
 					ctx.fillText(str,(c.width-strm.width)*.5,(c.height+strm.actualBoundingBoxDescent+strm.actualBoundingBoxAscent)*.5-strm.actualBoundingBoxDescent);
