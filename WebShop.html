@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TrueTone: ProtoType</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header role="header" data-include="header_index.html"></header>
+
+			<!-- Main -->
+			<section id="main" class="container">
+				<center>
+					<h2><b>▶ TrueTone 상점 ◀</b></h2>
+					<p><font size="5">TrueTone에서 제작되거나 판매되는 상품을 한곳에서!</font></p>
+					<hr>
+				</center>
+				
+				<div class="row">
+					<div class="col-4 col-12-narrower">
+						<section class="box special">
+							<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+							<p>
+								<font size="6">
+								<b>New Pause Screen</b>
+								</font>
+								<br>
+								<font size="4">
+								완전 색다르게!
+								</font>
+							</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button icon solid fa-credit-card small">구매하기</a><br><code>가격: 1,000원</code></li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-4 col-12-narrower">
+						<section class="box special">
+							<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+							<p>
+								<font size="6">
+								<b>Korean Pack</b>
+								</font>
+								<br>
+								<font size="4">
+								한국어 번역을 제대로 고쳤다!
+								</font>
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/TrueToneTeam/KoreanPack" class="button icon solid fa-cloud-download-alt small">다운로드</a><br><code>가격: 무료</code></li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-4 col-12-narrower">
+						<section class="box special">
+							<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+							<p>
+								<font size="6">
+								<b>Coming Soon..</b>
+								</font>
+								<br>
+								<font size="4">
+								새로운 상품이 준비중 입니다!
+								</font>
+							</p>
+							<ul class="actions stacked">
+								<li><span class="button icon solid fa-dice-d6 small disabled">준비중</span><br><code>가격: 무료</code></li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Footer -->
+			<footer role="footer" data-include="footer_index.html"></footer>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+	
+	<script> 
+	$(function(){ 
+		includeLayout(); 
+	}); 
+	function includeLayout(){ 
+		var includeArea = $('[data-include]'); 
+		var self, url; 
+		$.each(includeArea, function() { 
+			self = $(this); 
+			url = self.data("include"); 
+			self.load(url, function() { 
+				self.removeAttr("data-include"); 
+			}); 
+		}); 
+	} 
+	</script>
+</html>
