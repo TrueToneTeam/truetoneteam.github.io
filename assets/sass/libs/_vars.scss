@@ -5,46 +5,78 @@
 
 // Duration.
 	$duration: (
-		menu:				0.45s,
+		navPanel:			0.5s,
 		transition:			0.2s
 	);
 
 // Size.
 	$size: (
-		border-radius:		4px,
-		border-width:		1px,
+		navPanel:			275px,
+		border-radius:		6px,
 		element-height:		3em,
 		element-margin:		2em,
-		gutter:				2.5em,
-		field-gutter:		2em,
-		inner:				68em,
-		menu:				22em
+		container-width:	60em
 	);
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
+		family:				('Source Sans Pro', sans-serif),
+		family-fixed:		monospace,
 		weight:				300,
-		weight-bold:		900,
-		weight-bold-alt:	700,
-		letter-spacing:		0.35em,
-		letter-spacing-alt:	-0.035em
+		weight-bold:		400,
 	);
 
 // Palette.
 	$palette: (
-		bg:					#ffffff,
-		bg-accent:			#333333,
-		bg-alt:				#f6f6f6,
-		fg:					#585858,
-		fg-accent:			#ffffff,
-		border:				#c9c9c9,
-		border-bg:			rgba(144,144,144,0.075),
-		accent1:			#f2849e,
-		accent2:			#7ecaf6,
-		accent3:			#7bd0c1,
-		accent4:			#c75b9b,
-		accent5:			#ae85ca,
-		accent6:			#8499e7,
+		bg:					#f5f5f5,
+		fg:					#777,
+		fg-bold:			#646464,
+		fg-light:			#999,
+		border:				#e5e5e5,
+		border-bg:			#f8f8f8,
+		border2:			#dddddd,
+		border2-bg:			#f0f0f0,
+
+		header: (
+			bg:				#444,
+			fg:				#bbb,
+			fg-bold:		#fff,
+			fg-light:		#999
+		),
+
+		accent1: (
+			bg:				#666,
+			fg:				mix(#666, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#666, #ffffff, 40%)
+		),
+
+		accent2: (
+			bg:				#e89980,
+			fg:				mix(#e89980, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#e89980, #ffffff, 40%)
+		),
+
+		accent3: (
+			bg:				#7fcdb8,
+			fg:				mix(#7fcdb8, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#7fcdb8, #ffffff, 40%)
+		),
+
+		accent4: (
+			bg:				#90b0ba,
+			fg:				mix(#90b0ba, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#90b0ba, #ffffff, 40%)
+		),
+
+		accent5: (
+			bg:				#e5cb95,
+			fg:				mix(#e5cb95, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#e5cb95, #ffffff, 40%)
+		)
+
 	);
